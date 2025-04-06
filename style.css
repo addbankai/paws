@@ -529,7 +529,131 @@ main {
      .nft-display .nft-card:hover {
         transform: scale(1.05) !important; /* Simpler hover effect */
      }
+     /* Remove specific side card width */
+}
 
+/* --- Collection Slider Styles --- */
+
+.collection-slider-section {
+    width: 100%; /* Take full width of main container */
+    margin-top: 80px; /* Space above the slider */
+    margin-bottom: 50px; /* Space below the slider */
+    padding: 0 15px; /* Padding on the sides */
+    box-sizing: border-box;
+}
+
+.collection-slider-section h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.collection-swiper {
+    width: 100%;
+    padding-top: 10px; /* Space for potential overflow */
+    padding-bottom: 50px; /* Space for pagination */
+}
+
+.collection-swiper .swiper-slide {
+    background-color: #1e1e1e; /* Dark background for slides */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto; /* Let content define height */
+    display: flex; /* Use flex for content alignment */
+    flex-direction: column; /* Stack image and title */
+}
+
+.collection-swiper .swiper-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.collection-swiper .swiper-slide a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%; /* Ensure link covers the slide */
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area */
+    background-color: #333; /* Placeholder background */
+}
+
+.collection-swiper .slide-title {
+    padding: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ccc;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Slight overlay */
+    margin-top: auto; /* Push title to bottom if needed */
+}
+
+/* Swiper Navigation/Pagination */
+.collection-swiper .swiper-pagination-bullet {
+    background-color: #a0a0a0;
+    opacity: 0.7;
+}
+
+.collection-swiper .swiper-pagination-bullet-active {
+    background-color: #00ffaa; /* Active bullet color */
+    opacity: 1;
+}
+
+.collection-swiper .swiper-button-prev,
+.collection-swiper .swiper-button-next {
+    color: #00ffaa; /* Arrow color */
+    background-color: rgba(30, 30, 30, 0.7); /* Semi-transparent background */
+    border-radius: 50%;
+    width: 40px; /* Fixed size */
+    height: 40px; /* Fixed size */
+    transition: background-color 0.3s ease;
+}
+.collection-swiper .swiper-button-prev:hover,
+.collection-swiper .swiper-button-next:hover {
+    background-color: rgba(0, 255, 170, 0.3);
+}
+
+.collection-swiper .swiper-button-prev::after,
+.collection-swiper .swiper-button-next::after {
+    font-size: 18px; /* Adjust arrow size */
+    font-weight: bold;
+}
+
+/* Adjust button position */
+.collection-swiper .swiper-button-prev {
+    left: 5px;
+}
+.collection-swiper .swiper-button-next {
+    right: 5px;
+}
+
+/* Hide arrows on smaller screens if needed */
+@media (max-width: 600px) {
+    .collection-swiper .swiper-button-prev,
+    .collection-swiper .swiper-button-next {
+        display: none;
+    }
+    .collection-swiper {
+        padding-bottom: 40px; /* Adjust padding if arrows are hidden */
+    }
+    .collection-swiper .swiper-slide img {
+        height: 150px; /* Smaller image height on mobile */
+    }
+    .collection-slider-section h2 {
+        font-size: 1.6em;
+    }
 }
 
 @media (max-width: 480px) {
